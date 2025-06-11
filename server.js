@@ -7,13 +7,11 @@ import favicon from 'serve-favicon';
 const app = express();
 
 // ✅ Allow frontend (GH Pages)
-app.use(cors({
-  origin: 'http://localhost:5173', // replace with your actual GH Pages URL
-}));
+app.use(cors());
 
 app.use(express.json());
 
-// ⛳ Serve favicon (optional)
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(favicon(path.join(__dirname, 'public', 'Image.webp')));
